@@ -1,5 +1,5 @@
 # AsteroidsApplication
-A simple Java Asteroids shooting game, inspired by a video game classic developed by Atari and self published in the year 1979.
+A simple, Java-based, Asteroids shooting game, inspired by a video game classic developed by Atari and self published in the year 1979.
 
 **Built With**
 - **IntelliJ IDEA** 
