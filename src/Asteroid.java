@@ -1,0 +1,38 @@
+import java.util.Random;
+
+public class Asteroid extends Character{
+    private double rotationalMovement;
+
+    public Asteroid(int x, int y) {
+        super(new PolygonFactory().createPolygon(), x, y);
+        Random rnd = new Random();
+        super.getCharacter().setRotate(rnd.nextInt(360));
+
+        int accelerationAmount = 1 + rnd.nextInt(10);
+        for (int i = 0; i < accelerationAmount; i++ ){
+            accelerate();
+        }
+        this.rotationalMovement = 0.5 - rnd.nextDouble();
+    }
+    @Override
+    public void move() {
+        super.move();
+
+        double x = this.getCharacter().getTranslateX();
+        double y = this.getCharacter().getTranslateY();
+
+        if (x < 0) {
+            this.getCharacter().setTranslateX(AsteroidsApplication.WIDTH);
+        }
+        if (x > AsteroidsApplication.WIDTH) {
+            this.getCharacter().setTranslateX(0);
+        }
+        if (y < 0) {
+            this.getCharacter().setTranslateY(AsteroidsApplication.HEIGHT);
+        }
+        if (y > AsteroidsApplication.HEIGHT) {
+            this.getCharacter().setTranslateY(0);
+        }
+    }
+
+}
